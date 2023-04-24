@@ -1,32 +1,60 @@
-# Prerequisites
-*.d
+*~
+.vscode
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# KDE directory preferences
+.directory
 
-# Precompiled Headers
-*.gch
-*.pch
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
 *.exe
 *.out
-*.app
+*.log
+*.temp
+*.xml
+*.log
+*.apk
+*.apk
+*.ap_
+  
+# Files for the Dalvik VM
+*.dex
+  
+# Java class files
+*.class
+  
+# Generated files
+*/bin/
+*/gen/
+*/out/
+# Intellij
+*.iml
+*/*.iml
+  
+# Keystore files
+#*.jks
+#gradle wrapper
+gradle/
+  
+#some local files
+*/.settings/
+*/.DS_Store
+.DS_Store
+*/.idea/
+.idea/
+# 目录
+client/
+__debug_bin
+*.log
+*.obj
+*.idb
+.vs
+.idea
+.exe
+*/venv
+python/venv
+goTryEverything
