@@ -1,12 +1,27 @@
-﻿// demo1.cpp: 定义应用程序的入口点。
-//
-
-#include "demo1.h"
-
+﻿#include <iostream>
+#include <type_traits>
+#include <functional>
 using namespace std;
 
+template<class T>
+class Info
+{
+public:
+  template < typename fun_t =std::function<int()>
+           >
+	void func(fun_t m)
+	{
+		cout<<"this is Info " << m()<< endl;
+	}
+};
+template <typename T>
+class Info2:public Info<T>
+{
+
+};
 int main()
 {
-	cout << "Hello CMake." << endl;
+	Info2<int> a;
+	a.func([](){return 10; });
 	return 0;
 }

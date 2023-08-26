@@ -22,5 +22,3 @@ T.122：使用模板在编译时计算类型
 C++ Templates
 
 https://github.com/xiaoweiChen/Cpp-Templates-2nd
-
-https://github.com/Walton1128/CPP-Templates-2nd--
