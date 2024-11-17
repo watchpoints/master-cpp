@@ -1,43 +1,61 @@
 ﻿
 #include <iostream>
-#include <iomanip> // 包含 std::hex 格式控制器
 #include <iostream>
-#include <string>
-#include <sstream>
+#include <memory>
+//#include <mutex>
+#include <thread>
 using namespace std;
-//g++ -g -Wall -std=c++11 main.cpp
+struct Base
+{
+    Base() { std::cout << "Base::Base()\n"; }
+ 
+    // Note: non-virtual destructor is OK here
+    ~Base() { std::cout << "Base::~Base()\n"; }
+};
+
+
+void thread_read(std::shared_ptr<Base> sp1)
+{
+    std::shared_ptr<Base> lp = sp1; // 线程 A 的局部变量
+    std::cout << "read thead use count: " << sp1.use_count() << std::endl;
+}
+
+void thread_write(std::shared_ptr<Base> sp1)
+{
+    std::shared_ptr<Base> sp3 = std::make_shared<Base>(); //// 线程 B 的局部变量
+    sp1=sp3; //reset 
+    std::cout << "write thead use count: " <<sp1.use_count() << std::endl;
+}
+
+//g++ -g -Wall -std=c++11 demo_share_pointer.cpp
+//g++ -std=c++11 -pthread -o test demo_share_pointer.cpp
 int main()
 {
-	cout << "Hello CMake." << endl;
-    //?? int x = 0x1F; 语句在C++中是合法的
-	//十六进制字面值初始化整数变量的常见方式。
-	// 在这个例子中，0x1F 是一个十六进制数，等于十进制的31。因此，整数变量 x 被赋值为31。
-	 int hex = 0x1F; // 在C++中，大多数字面值是右值（R-value）
-	//int hex = 1F; // 16进制数
-	//0x 是一个指示十六进制数的前缀
-	std::cout << std::dec << hex << std::endl; // 输出10进制数
-	std::cout << std::hex << hex << std::endl; // 输出16进制数
+	
+  std::shared_ptr<Base> sp1 = std::make_shared<Base>(); //线程之间共享的 shared_ptr
+  std::cout << "use count: " << sp1.use_count() << std::endl;
+  
+  shared_ptr<Base> sp2 = sp1;
+  std::cout << "use count: " << sp1.use_count() << std::endl;
+  
+  shared_ptr<Base> sp3 = sp2;
+  std::cout << "use count: " << sp1.use_count() << std::endl;
 
+  /** 
+	Base::Base()
+	use count: 1
+	use count: 2
+	use count: 3
+	Base::~Base()
+ **/
+ 
+  std::thread t1{thread_read, sp1}, t2{thread_write, sp1};
+  
+ 
+  t1.join();
+  t2.join();
 
-	// 无符号64位整数的十六进制字面值
-	//这是因为在C++中，默认将没有前缀的整数字面值解释为十进制
-    // uint64_t hexValue = FEDCBA9876543210;
-	// std::cout << "Hex Value: " << std::hex << ":" << hexValue << std::endl;
-	// std::cout << "Hex Value: " << std::dec << ":" << hexValue << std::endl;
+  std::cout << "All threads completed,\n";
 
-	stringstream ss2;
-    int d2;
-    string str2("1aF"); //1aF十进制431
-    ss2 << std::hex << str2; //选用十六进制输出
-
-    ss2 >> d2;
-    std::cout << "1aF="<< d2 << std::endl;
-    std::cout <<"----------------------"<<std::endl;;
-
-	uint64_t aa = 656111;
-	std::cout << std::hex <<  "0x" << aa << std::dec << std::endl; // 输出16进制数
-
-
-    
-	return 0;
+  return 0;
 }
