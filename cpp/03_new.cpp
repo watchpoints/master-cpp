@@ -1,4 +1,3 @@
-#include <iostream>
 
 class Foo
 {
@@ -10,7 +9,7 @@ public:
      }
 };
 
-
+//g++ 03_new.cpp -lstdc++
 int main() {
     Foo* ptr = new Foo(10);
     return 0;
