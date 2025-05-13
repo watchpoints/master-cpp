@@ -1,5 +1,9 @@
-# master-cpp
-掌握cpp从小工到专家
+# 目标：掌握cpp从小工到专家
+
+# 联系方式
+
+
+![微信公共号](https://github.com/user-attachments/assets/e9cf54f8-7155-4340-8c01-d26c3f7ea95f)
 
 
 
@@ -7,20 +11,4 @@
 
 
 
-## book
 
-### C++核心准则
-
-- https://github.com/isocpp/CppCoreGuidelines/
-- https://gitcode.gitcode.host/docs-cn/cppcoreguidelines-docs-cn/CppCoreGuidelines.html
-- https://gitee.com/plus7wist/CppCoreGuidelines-zh-CN
-
-T.122：使用模板在编译时计算类型
-
-
-
-C++ Templates
-
-https://github.com/xiaoweiChen/Cpp-Templates-2nd
-
-https://github.com/Walton1128/CPP-Templates-2nd--
