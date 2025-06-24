@@ -6,6 +6,6 @@ project ("Function")
 set(CMAKE_CXX_STANDARD 20)
 
 # 将源代码添加到此项目的可执行文件。
-add_executable (test "main.cpp")
+add_executable (test "ep01_string_view.cpp")
 
 # TODO: 如有需要，请添加测试并安装目标。
