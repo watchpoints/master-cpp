@@ -3,8 +3,9 @@
 - [前言](./README.md)
 	
 - [第一周: C++ 高频面试题解析](./chapter1/README.md)
-  - [指针](./chapter1/lesson1-pointer.md)
-
+  - [第一天指针](./chapter1/lesson1-pointer.md)
+  -  [第二天 虚函数](./chapter1/lesson2-function.md)
+  -  [第三天 stl容器](./chapter1/lesson3-stl.md)
 - [第四周: 模拟面试](./chapter4/README.md)
   - [九章云极 - 2025-03-10 C++ 开发工程师](./chapter4/19-2025-03-10-九章云极-C++开发工程师.md)
   -  [20-2025-04-1-济南-C++开发工程师](./chapter4/20-2025-04-1-济南-C++开发工程师.md)

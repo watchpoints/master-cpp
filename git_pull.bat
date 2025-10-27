@@ -1,6 +1,5 @@
 @echo off
 ::切换到目录
-cd /d D:\code\master-cpp
 git pull
 git add -A .
 git add *.md
