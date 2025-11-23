@@ -1,3 +1,0 @@
-/Users/wangchuanyi/code/src/github.com/watchpoints/master-cpp/weekly1-cpp/day4/build/CMakeFiles/task04.dir
-/Users/wangchuanyi/code/src/github.com/watchpoints/master-cpp/weekly1-cpp/day4/build/CMakeFiles/edit_cache.dir
-/Users/wangchuanyi/code/src/github.com/watchpoints/master-cpp/weekly1-cpp/day4/build/CMakeFiles/rebuild_cache.dir
